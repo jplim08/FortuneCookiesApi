@@ -1,0 +1,13 @@
+/App/Theme/*/
+/vendor/*
+!/vendor/.htaccess
+/Var/*/
+/etc/*
+!/etc/.htaccess
+/public/*
+/public/deploy*
+/public/generation.php
+/.htaccess
+!/public/sys
+/App/Ext/Lns/Fortunecookies/View/Images/Uploads/*
+.DS_Store

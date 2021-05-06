@@ -1,0 +1,19 @@
+/sb101.systembase.ga/App/Ext/Lns/Sb/Config.php
+- change version to 1.0.5
+- add controller 'api_settings_lang' => 'Lns\\Sb\\Controller\\Api\\Settings\\Lang',
+- 'admin_settings_action_editlang' => 'Lns\\Sb\\Controller\\Admin\\Settings\\Action\\Editlang',
+
+/sb101.systembase.ga/App/Ext/Lns/Sb/Lib/Lang/lang/en.php
+- add sm_links* variables
+- add edit_selected 
+- add langname
+
+/sb101.systembase.ga/App/Ext/Lns/Sb/Lib/Lang/Lang.php
+- add getAll() function
+- setLang($type='en')
+	return $this enstead of nothing
+
+
+/sb101.systembase.ga/App/Ext/Lns/Sb/View/Template/admin/content/settings_index_index.phtml
+- add sm_links setting box
+- add edit_selected button in language box, add js for controll of the button

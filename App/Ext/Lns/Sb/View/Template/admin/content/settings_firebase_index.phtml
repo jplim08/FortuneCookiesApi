@@ -1,0 +1,105 @@
+<?php
+	use Lns\Sb\Lib\Lang\Lang;
+    $_lang = new Lang();
+?>
+<div class="row gap-20 masonry pos-r">
+	<div class="masonry-sizer col-md-6"></div>
+	<div class="masonry-item col-sm-6 col-md-6 col-lg-6">
+		<div class="bgc-white p-20 bd">
+			<form action="<?= $this->getAdminUrl('settings/firebase/save') ?>" method="POST">
+			    <h6 class="c-grey-900">
+					<?= $_lang->getLang('firebase_settings'); ?>
+				</h6>
+			    <div class="mT-30">
+		            <div class="form-group row">
+		                <label for="firebase_api_key" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_api_key'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_api_key" name="firebase_api_key" value="<?= $this->getConfig('firebase_api_key') ?>"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="firebase_auth_domain" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_auth_domain'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_auth_domain" name="firebase_auth_domain" value="<?= $this->getConfig('firebase_auth_domain') ?>"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="firebase_database_url" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_database_url'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_database_url" name="firebase_database_url" value="<?= $this->getConfig('firebase_database_url') ?>"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="firebase_project_id" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_project_id'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_project_id" name="firebase_project_id" value="<?= $this->getConfig('firebase_project_id') ?>"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="firebase_storage_bucket" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_storage_bucket'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_storage_bucket" name="firebase_storage_bucket" value="<?= $this->getConfig('firebase_storage_bucket') ?>"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="firebase_messaging_sender_id" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_messaging_sender_id'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_messaging_sender_id" name="firebase_messaging_sender_id" value="<?= $this->getConfig('firebase_messaging_sender_id') ?>"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="firebase_app_id" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_app_id'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_app_id" name="firebase_app_id" value="<?= $this->getConfig('firebase_app_id') ?>"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="firebase_measurement_id" class="col-sm-4 col-form-label pT-10 pB-5"><?= $_lang->getLang('firebase_measurement_id'); ?></label>
+		                <div class="col-sm-8">
+		                    <input type="text" class="form-control" id="firebase_measurement_id" name="firebase_measurement_id" value="<?= $this->getConfig('firebase_measurement_id') ?>"/>
+		                </div>
+                    </div>
+		            <div class="form-group row">
+		            	<div class="col-sm-8">
+		            		<button type="submit" class="btn btn-primary"><?= $_lang->getLang('save'); ?></button>
+		            	</div>
+		           	</div>
+			    </div>
+			</form>
+		</div>
+    </div>
+    <div class="masonry-item col-sm-6 col-md-6 col-lg-6 d-none">
+        <div class="bgc-white p-20 bd">
+        <form action="<?= $this->getAdminUrl('settings/firebase/send') ?>" method="POST">
+			    <h6 class="c-grey-900">
+					<?= $_lang->getLang('firebase_test'); ?>
+				</h6>
+			    <div class="mT-30">
+		            <div class="form-group row">
+		                <label for="string" class="col-sm-3 col-form-label pT-10 pB-5"><?= $_lang->getLang('string'); ?></label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="string" name="string[stringValue]"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="double" class="col-sm-3 col-form-label pT-10 pB-5"><?= $_lang->getLang('double'); ?></label>
+		                <div class="col-sm-9">
+		                    <input type="number" step="0.1" min="0" value="0.00" class="form-control" id="double" name="double[doubleValue]"/>
+		                </div>
+                    </div>
+                    <div class="form-group row">
+		                <label for="integer" class="col-sm-3 col-form-label pT-10 pB-5"><?= $_lang->getLang('integer'); ?></label>
+		                <div class="col-sm-9">
+		                    <input type="number" step="1" min="0" value="0" class="form-control" id="integer" name="integer[integerValue]"/>
+		                </div>
+                    </div>
+		            <div class="form-group row">
+		            	<div class="col-sm-8">
+		            		<button type="submit" class="btn btn-primary"><?= $_lang->getLang('save'); ?></button>
+		            	</div>
+		           	</div>
+			    </div>
+			</form>
+        </div>
+    </div>
+</div>
