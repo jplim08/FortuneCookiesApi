@@ -17,21 +17,6 @@ class Get extends \Lns\Sb\Controller\Controller {
 			// $this->$test_work = 20;
 			
 		}
-		function pc_permute($items, $perms = array( )) {
-			if (empty($items)) { 
-				var_dump($perms);
-				return $perms;
-				// print join(' ', $perms) . "\n";
-			}  else {
-				for ($i = count($items) - 1; $i >= 0; --$i) {
-					 $newitems = $items;
-					 $newperms = $perms;
-					 list($foo) = array_splice($newitems, $i, 1);
-					 array_unshift($newperms, $foo);
-					 $this->pc_permute($newitems, $newperms);
-				 }
-			}
-		}
 		function generate_combinations(array $data, array &$all = array(), array $group = array(), $value = null, $i = 0,$test_work = 0)
 		{
 			$keys = array_keys($data);
@@ -186,15 +171,16 @@ class Get extends \Lns\Sb\Controller\Controller {
 					// $set_2d = $this->get_2d($set);
 					// $combinations = $this->generate_combinations($set_2d);
 
-					// // var_dump($combinations);die;
-					// foreach ($combinations as $value) {
-					// 	if($work <= $value){
-					// 		$work = $value;
-					// 	}else{
-					// 		$work = $work;
-					// 	}
-					// }
-					// echo $work;
+					// // var_dump($combinations);
+
+					// // foreach ($combinations as $value) {
+					// // 	if($work <= $value){
+					// // 		$work = $value;
+					// // 	}else{
+					// // 		$work = $work;
+					// // 	}
+					// // }
+					// echo max($combinations);
 					// die;
 
 					$deviceId = $this->_request->getServer('HTTP_DEVICEID');
